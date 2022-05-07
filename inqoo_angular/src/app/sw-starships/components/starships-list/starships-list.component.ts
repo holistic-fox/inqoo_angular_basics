@@ -25,4 +25,8 @@ export class StarshipsListComponent implements OnInit {
     });
   }
 
+  onSearchChange = (searchTerm: string) => {
+    console.log('Please do filtering here');
+  }
+
 }
