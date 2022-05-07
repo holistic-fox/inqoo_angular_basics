@@ -27,8 +27,11 @@ export class StarshipsListComponent implements OnInit {
     });
   }
 
+
+
   onSearchChange = (searchTerm: string) =>
     searchTerm === '' ?
       this.starships = [...this.starshipsBase]
-      : this.starships = this.starshipsBase.filter(ship => ship.name.includes(searchTerm));
+      : this.starships = this.starshipsBase.filter(ship =>
+        ship.name.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase()));
 }
