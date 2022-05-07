@@ -6,13 +6,7 @@ import {Starship} from "../../../api/models/starship";
   templateUrl: './starship.component.html',
   styleUrls: ['./starship.component.scss']
 })
-export class StarshipComponent implements OnInit {
-
+export class StarshipComponent {
   @Input() starship: Starship | undefined;
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }
