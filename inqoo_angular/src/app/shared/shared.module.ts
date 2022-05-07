@@ -10,6 +10,7 @@ import { ComponentsShowroomPageComponent } from './pages/components-showroom-pag
 import {RouterModule} from "@angular/router";
 import { InqooDateComponent } from './components/inqoo-date/inqoo-date.component';
 import { InqooUpAndLowPipe } from './pipes/inqoo-up-and-low.pipe';
+import { InqooClockV2Component } from './components/inqoo-clock-v2/inqoo-clock-v2.component';
 
 
 
@@ -24,6 +25,7 @@ import { InqooUpAndLowPipe } from './pipes/inqoo-up-and-low.pipe';
     ComponentsShowroomPageComponent,
     InqooDateComponent,
     InqooUpAndLowPipe,
+    InqooClockV2Component,
   ],
   imports: [
     CommonModule,
