@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {filter, interval, map, Observable, take, tap} from "rxjs";
+import {Component, Input} from '@angular/core';
+import {interval, map, Observable} from "rxjs";
 
 @Component({
   selector: 'app-inqoo-clock-v2',
@@ -8,5 +8,9 @@ import {filter, interval, map, Observable, take, tap} from "rxjs";
 })
 export class InqooClockV2Component {
 
-  myCustomInterval: Observable<number> = interval(1000);
+  @Input() timeFormat: string = 'mediumTime';
+
+  myCustomInterval: Observable<number> = interval().pipe(
+    map(() => Date.now())
+  );
 }
