@@ -5,14 +5,9 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
   templateUrl: './inqoo-search-bar.component.html',
   styleUrls: ['./inqoo-search-bar.component.scss']
 })
-export class InqooSearchBarComponent implements OnInit {
+export class InqooSearchBarComponent {
 
   @Output() onValueChange = new EventEmitter<string>();
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
   onUserTyping = (event: Event) => this.onValueChange.emit((event.target as HTMLInputElement).value);
 }
