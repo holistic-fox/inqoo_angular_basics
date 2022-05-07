@@ -1,3 +1,5 @@
-<div class="starships-list">
-  <app-starship *ngFor="let ship of starships" [starship]="ship" ></app-starship>
+<app-inqoo-loader *ngIf="isLoading" [label]="'Loading starships'"></app-inqoo-loader>
+
+<div class="starships-list" *ngIf="!isLoading">
+  <app-starship *ngFor="let ship of starships" [starship]="ship"></app-starship>
 </div>

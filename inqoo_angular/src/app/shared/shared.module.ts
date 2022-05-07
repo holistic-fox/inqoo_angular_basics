@@ -11,6 +11,7 @@ import {RouterModule} from "@angular/router";
 import { InqooDateComponent } from './components/inqoo-date/inqoo-date.component';
 import { InqooUpAndLowPipe } from './pipes/inqoo-up-and-low.pipe';
 import { InqooClockV2Component } from './components/inqoo-clock-v2/inqoo-clock-v2.component';
+import { InqooLoaderComponent } from './components/inqoo-loader/inqoo-loader.component';
 
 
 
@@ -26,6 +27,7 @@ import { InqooClockV2Component } from './components/inqoo-clock-v2/inqoo-clock-v
     InqooDateComponent,
     InqooUpAndLowPipe,
     InqooClockV2Component,
+    InqooLoaderComponent,
   ],
   imports: [
     CommonModule,
@@ -37,7 +39,8 @@ import { InqooClockV2Component } from './components/inqoo-clock-v2/inqoo-clock-v
     InqooAccordionItemComponent,
     InqooAccordionComponent,
     InqooClockComponent,
-    InqooNavbarComponent
+    InqooNavbarComponent,
+    InqooLoaderComponent
   ]
 })
 export class SharedModule { }
