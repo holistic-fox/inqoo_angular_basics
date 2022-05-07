@@ -11,6 +11,7 @@ import {delay, map} from "rxjs";
 export class StarshipsListComponent implements OnInit {
 
   starships: Starship[] = [];
+  starshipsBase: Starship[] = [];
   isLoading: boolean = true;
 
   constructor(private swapi: SwapiService) { }
@@ -21,12 +22,13 @@ export class StarshipsListComponent implements OnInit {
       map(data => data.results as Starship[])
     ).subscribe(result => {
       this.starships = result;
+      this.starshipsBase = result;
       this.isLoading = false;
     });
   }
 
-  onSearchChange = (searchTerm: string) => {
-    console.log('Please do filtering here');
-  }
-
+  onSearchChange = (searchTerm: string) =>
+    searchTerm === '' ?
+      this.starships = [...this.starshipsBase]
+      : this.starships = this.starshipsBase.filter(ship => ship.name.includes(searchTerm));
 }

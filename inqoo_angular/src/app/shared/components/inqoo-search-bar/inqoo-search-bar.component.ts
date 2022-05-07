@@ -14,5 +14,5 @@ export class InqooSearchBarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onUserTyping = (event: any) => this.onValueChange.emit(event.target.value);
+  onUserTyping = (event: Event) => this.onValueChange.emit((event.target as HTMLInputElement).value);
 }
