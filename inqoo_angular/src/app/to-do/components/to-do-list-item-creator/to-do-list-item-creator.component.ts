@@ -19,5 +19,8 @@ export class ToDoListItemCreatorComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onItemSubmit = () => this.onItemCreate.emit(this.itemCreator.value.itemLabel);
+  onItemSubmit = () => {
+    this.onItemCreate.emit(this.itemCreator.value.itemLabel);
+    this.itemCreator.reset();
+  }
 }
