@@ -1,5 +1,8 @@
 <div class="creator-container">
   <form [formGroup]="itemCreator" (ngSubmit)="onItemSubmit()">
     <input type="text" class="form-control" formControlName="itemLabel">
+    <div *ngIf="hasRequiredError()" style="color: red">Label is required</div>
+    <div *ngIf="hasMinLengthError()" style="color: red">Min length is 3</div>
+    <div *ngIf="hasMinPatternError()" style="color: red">Only letters are allowed</div>
   </form>
 </div>
