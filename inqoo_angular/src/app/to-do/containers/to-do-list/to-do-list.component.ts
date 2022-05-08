@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
 import {ToDoItem} from '../../models/to-do-item';
-import {ToDoListMock} from "../../mocks/to-do-list.mock";
 
 @Component({
   selector: 'app-to-do-list',
