@@ -3,5 +3,5 @@
 </div>
 
 <div class="to-do-list-container">
-  <app-to-do-list-item-creator></app-to-do-list-item-creator>
+  <app-to-do-list-item-creator (onItemCreate)="addToDoItem($event)"></app-to-do-list-item-creator>
 </div>

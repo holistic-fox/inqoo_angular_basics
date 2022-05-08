@@ -1,20 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ToDoItem } from '../../models/to-do-item';
-import { ToDoListMock } from "../../mocks/to-do-list.mock";
 
 @Component({
   selector: 'app-to-do-list',
   templateUrl: './to-do-list.component.html',
   styleUrls: ['./to-do-list.component.scss']
 })
-export class ToDoListComponent implements OnInit {
+export class ToDoListComponent {
 
-  list: ToDoItem[] = ToDoListMock;
+  list: ToDoItem[] = [];
 
-  constructor() { }
-
-  ngOnInit(): void {
-
-  }
+  addToDoItem = (label: string) => this.list.push({
+    label,
+    isDone: false,
+    index: this.list.length
+  })
 
 }

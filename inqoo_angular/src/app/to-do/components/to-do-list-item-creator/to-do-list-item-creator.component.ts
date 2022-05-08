@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 
 @Component({
@@ -7,6 +7,8 @@ import {FormControl, FormGroup} from "@angular/forms";
   styleUrls: ['./to-do-list-item-creator.component.scss']
 })
 export class ToDoListItemCreatorComponent implements OnInit {
+
+  @Output() onItemCreate = new EventEmitter<string>();
 
   itemCreator = new FormGroup({
     itemLabel: new FormControl('')
@@ -17,6 +19,5 @@ export class ToDoListItemCreatorComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onItemSubmit = () => console.log('onItemSubmit', this.itemCreator)
-
+  onItemSubmit = () => this.onItemCreate.emit(this.itemCreator.value.itemLabel);
 }
