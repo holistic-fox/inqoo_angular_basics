@@ -11,10 +11,14 @@ export class ToDoListItemCreatorComponent {
   @Output() onItemCreate = new EventEmitter<string>();
 
   itemCreator = new FormGroup({
-    itemLabel: new FormControl('', [Validators.minLength(3)], )
+    itemLabel: new FormControl('', [
+      Validators.minLength(3),
+      Validators.pattern('^[a-zA-Z\\s]*$')
+    ])
   });
 
   onItemSubmit = () => {
+    console.log(this.itemCreator)
     if(this.itemCreator.valid) {
       this.onItemCreate.emit(this.itemCreator.value.itemLabel);
       this.itemCreator.reset();
