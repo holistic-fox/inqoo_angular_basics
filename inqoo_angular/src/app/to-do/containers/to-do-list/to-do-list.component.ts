@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { ToDoItem } from '../../models/to-do-item';
+import {Component} from '@angular/core';
+import {ToDoItem} from '../../models/to-do-item';
+import {ToDoListMock} from "../../mocks/to-do-list.mock";
 
 @Component({
   selector: 'app-to-do-list',
@@ -8,12 +9,15 @@ import { ToDoItem } from '../../models/to-do-item';
 })
 export class ToDoListComponent {
 
-  list: ToDoItem[] = [];
+  list: ToDoItem[] = ToDoListMock;
 
   addToDoItem = (label: string) => this.list.push({
     label,
     isDone: false,
-    index: this.list.length
+    id: this.list.length
   })
+
+  // onItemDone = (id: number) => this.list = this.list.map(item => item.id === id ? {...item, isDone: true} : item);
+  onItemDone = (id: number) => this.list[this.list.findIndex(item => item.id === id)].isDone = true;
 
 }

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {ToDoItem} from "../../models/to-do-item";
 
 @Component({
@@ -6,13 +6,11 @@ import {ToDoItem} from "../../models/to-do-item";
   templateUrl: './to-do-list-item.component.html',
   styleUrls: ['./to-do-list-item.component.scss']
 })
-export class ToDoListItemComponent implements OnInit {
+export class ToDoListItemComponent {
 
   @Input() item: ToDoItem | undefined;
+  @Output() onDoneClick = new EventEmitter<number>();
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  doneClick = () => this.onDoneClick.emit(this.item?.id);
 
 }
