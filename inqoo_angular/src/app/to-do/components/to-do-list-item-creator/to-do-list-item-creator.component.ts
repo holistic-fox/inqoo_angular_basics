@@ -11,7 +11,7 @@ export class ToDoListItemCreatorComponent implements OnInit {
   @Output() onItemCreate = new EventEmitter<string>();
 
   ngOnInit() {
-    console.log(this.itemCreator)
+
   }
 
   itemCreator = new FormGroup({
