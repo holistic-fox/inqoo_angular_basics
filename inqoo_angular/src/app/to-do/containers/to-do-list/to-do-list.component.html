@@ -1,5 +1,3 @@
 <div class="to-do-list-container">
-  <pre *ngFor="let item of list">
-    {{ item | json }}
-  </pre>
+  <app-to-do-list-item *ngFor="let item of list" [item]="item"></app-to-do-list-item>
 </div>
